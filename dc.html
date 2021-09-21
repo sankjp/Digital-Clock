@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--this is css -->
+    <title>Digital Clock </title>
+    <style type="text/css">
+
+        #clock {
+        width: 800px;
+        margin: 100px;
+        text-align: center;
+        font-size: 130px;
+        }
+       
+        </style>
+</head>
+<body>
+<!--this is js-->
+    <div id="clock"></div>
+<script type="text/javascript">
+    setInterval(displayClock);
+function displayClock () {
+var time= new Date();
+var hrs=time.getHours();
+var min= time.getMinutes();
+var sec=time.getSeconds();
+var en = 'AM';
+
+if(hrs>=12) {
+    en='PM';
+}
+
+if (hrs > 12) {
+    hrs=hrs-12;
+}
+if(hrs == 0) {
+    hrs = 12;
+}
+if(hrs<10) {
+    hrs ="0" + hrs;
+}
+if(min<10) {
+    min ="0" + min;
+}
+if(sec<10) {
+    sec ="0" + sec;
+}
+document. getElementById('clock'). innerHTML = hrs + ':'+min+':'+sec + ' ' + en;
+}
+
+</script>
+</body>
+</html>
